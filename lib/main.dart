@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/calculator.dart';
-import 'package:flutter_application_3/regform2.dart';
 import 'package:flutter_application_3/registration.dart';
 
 
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Audi()
+      home: Reg()
     );
   }
 }
