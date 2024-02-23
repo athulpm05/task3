@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_application_3/regform2.dart';
 
 class Reg extends StatefulWidget {
   const Reg({super.key});
@@ -13,7 +12,17 @@ class _RegState extends State<Reg> {
   var name = TextEditingController();
   var email = TextEditingController();
   var number = TextEditingController();
-  String Gender = ('');
+  String Gender = '';
+  String dropvalue = "Calicut";
+  var District = [
+    "Calicut",
+    "Malappuram",
+    "Kollam",
+    "Wayanad",
+    "Trissur",
+    "Kottayam",
+    "Kannur",
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -49,13 +58,13 @@ class _RegState extends State<Reg> {
                         padding: const EdgeInsets.only(right: 18),
                         child: Text(
                           "Name :",
-                          style:
-                              TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       ),
-            
+
                       // SizedBox
-            
+
                       SizedBox(
                           height: 50,
                           width: 270,
@@ -73,8 +82,8 @@ class _RegState extends State<Reg> {
                         padding: const EdgeInsets.only(top: 10),
                         child: Text(
                           "E mail :",
-                          style:
-                              TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       ),
                       Padding(
@@ -91,17 +100,17 @@ class _RegState extends State<Reg> {
                       ),
                     ],
                   ),
-            
+
                   // SizedBox
-            
+
                   Row(
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 10),
                         child: Text(
                           "Mobile :",
-                          style:
-                              TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       ),
                       Padding(
@@ -118,7 +127,7 @@ class _RegState extends State<Reg> {
                       ),
                     ],
                   ),
-            
+
                   //  Radio actionbutton
                   Padding(
                     padding: const EdgeInsets.only(right: 45),
@@ -144,9 +153,9 @@ class _RegState extends State<Reg> {
                                 });
                               }),
                         ),
-            
+
                         //  Radio actionbutton
-            
+
                         SizedBox(
                           width: 200,
                           child: RadioListTile(
@@ -159,9 +168,9 @@ class _RegState extends State<Reg> {
                                 });
                               }),
                         ),
-            
+
                         //  Radio actionbutton
-            
+
                         SizedBox(
                           width: 200,
                           child: RadioListTile(
@@ -177,14 +186,32 @@ class _RegState extends State<Reg> {
                       ],
                     ),
                   ),
-            // /                                      / inkwell button
-            
-                  Padding(
-                    padding: const EdgeInsets.only(right: 280, top: 25),
-                    child: Text("District :",
-                        style:
-                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                     // DropdownButton
+                  Row(
+                    children: [
+                      Text("District :",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold)),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: DropdownButton(
+                            value: dropvalue,
+                            items: District.map((String val) {
+                              return DropdownMenuItem(
+                                  value: val,
+                                   child: Text(val,style: TextStyle(fontSize: 20),));
+                            }).toList(),
+                            onChanged: (String? newValue) {
+                              setState(() {
+                                dropvalue = newValue!;
+                              });
+                            }),
+                      )
+                    ],
                   ),
+
+                  // /                                      / inkwell button
+
                   Padding(
                     padding: const EdgeInsets.only(top: 130, left: 80),
                     child: Row(
@@ -212,15 +239,17 @@ class _RegState extends State<Reg> {
                             onTap: () {
                               print(name.text);
                               print(email.text);
-                              print(number.text);
+                               print(number.text);
                               print(Gender);
+                              print(dropvalue);
                             },
                             child: Container(
                                 child: Center(
                                     child: Text(
                                   "Submit",
                                   style: TextStyle(
-                                      fontSize: 20, fontWeight: FontWeight.bold),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
                                 )),
                                 width: 100,
                                 height: 50,
