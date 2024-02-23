@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_3/reg.dart';
 
 class Reg extends StatefulWidget {
   const Reg({super.key});
@@ -12,6 +13,8 @@ class _RegState extends State<Reg> {
   var name = TextEditingController();
   var email = TextEditingController();
   var number = TextEditingController();
+
+  List l1=[];
   String Gender = '';
   String dropvalue = "Calicut";
   var District = [
@@ -242,6 +245,14 @@ class _RegState extends State<Reg> {
                                print(number.text);
                               print(Gender);
                               print(dropvalue);
+
+                              l1.add({"name":name.text,"email":email.text,"Mobile":number.text,"Gender":Gender,"District":dropvalue});
+                                    print(l1);
+
+                              Navigator.push(context,MaterialPageRoute(builder: (context){
+                                return Fff(users: l1);
+                              }));
+
                             },
                             child: Container(
                                 child: Center(
