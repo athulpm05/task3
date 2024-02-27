@@ -40,6 +40,7 @@ class _RegState extends State<Reg> {
         // AppBar
 
         appBar: AppBar(
+          toolbarHeight: 100,
           backgroundColor: Color.fromARGB(255, 154, 149, 192),
           shape: Border(
               bottom: BorderSide(
@@ -221,7 +222,7 @@ class _RegState extends State<Reg> {
                   // /                                      / inkwell button
 
                   Padding(
-                    padding: const EdgeInsets.only(top: 130, left: 80),
+                    padding: const EdgeInsets.only(top: 100, left: 80),
                     child: Row(
                       children: [
                         InkWell(
