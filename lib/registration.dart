@@ -15,7 +15,12 @@ class _RegState extends State<Reg> {
   var number = TextEditingController();
 
   List l1=[];
+
+
   String Gender = '';
+
+                    // dropdown list
+
   String dropvalue = "Calicut";
   var District = [
     "Calicut",
@@ -224,6 +229,7 @@ class _RegState extends State<Reg> {
                             name.clear();
                             email.clear();
                             number.clear();
+                            
                           },
                           child: Container(
                               child: Center(
@@ -246,8 +252,12 @@ class _RegState extends State<Reg> {
                               print(Gender);
                               print(dropvalue);
 
+                              // add to list
+
                               l1.add({"name":name.text,"email":email.text,"Mobile":number.text,"Gender":Gender,"District":dropvalue});
                                     print(l1);
+
+                                    // add to next page Fff                    
 
                               Navigator.push(context,MaterialPageRoute(builder: (context){
                                 return Fff(users: l1);
