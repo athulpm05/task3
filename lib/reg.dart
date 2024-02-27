@@ -15,38 +15,61 @@ class _FffState extends State<Fff> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Center(child: Text("REG LIST",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
-        backgroundColor: Colors.amber,
-      ),
-      body: ListView.builder(
-        
-        itemCount: widget.users.length,
-        itemBuilder: (context,index){
-        return ListTile(
-          title: Container(color: Colors.indigo[200],
-            child: Column(
-              children: [
-                Text(widget.users[index]["name"]),
-                Text(widget.users[index]["email"]),
-                Text(widget.users[index]["Mobile"]),
-                Text(widget.users[index]["Gender"]),
-                Text(widget.users[index]["District"]),
-            
-                              
-            
-            
-            
-              ],
+    return SafeArea(
+
+      child: Scaffold(backgroundColor: Color.fromARGB(255, 154, 149, 192),
+                            
+                            // appbar 
+        appBar: AppBar(
+          title: Center(child: 
+          Padding(
+            padding: const EdgeInsets.only(right: 25),
+            child: Text("REG LIST",style:
+             TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+          )),
+          backgroundColor: Colors.black,
+        ),
+
+                            // body
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                
+                itemCount: widget.users.length,
+                itemBuilder: (context,index){
+                return ListTile(
+                  title: Container(color:  Colors.black,
+                    child: Column(
+                      children: [
+                        Text(widget.users[index]["name"],style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                        Text(widget.users[index]["email"],style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                        Text(widget.users[index]["Mobile"],style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                        Text(widget.users[index]["Gender"],style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                        Text(widget.users[index]["District"],style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                    
+                                      
+                    
+                    
+                    
+                      ],
+                    ),
+                  ),
+                  
+                );
+              },),
             ),
-          ),
-          
-        );
-      },),
-      
+            ElevatedButton(onPressed: (){
+              setState(() {
+                widget.users.clear();
+              });
+            }, child: Text("Clear"))
+          ],
+        ),
         
-      );
+          
+        ),
+    );
   
   }
 }

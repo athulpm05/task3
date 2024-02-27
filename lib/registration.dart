@@ -35,12 +35,12 @@ class _RegState extends State<Reg> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.lime[200],
+        backgroundColor: Color.fromARGB(255, 154, 149, 192),
 
         // AppBar
 
         appBar: AppBar(
-          backgroundColor: Colors.lime[200],
+          backgroundColor: Color.fromARGB(255, 154, 149, 192),
           shape: Border(
               bottom: BorderSide(
             color: Colors.black,
