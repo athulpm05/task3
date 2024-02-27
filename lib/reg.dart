@@ -63,7 +63,8 @@ class _FffState extends State<Fff> {
               setState(() {
                 widget.users.clear();
               });
-            }, child: Text("Clear"))
+            }, child: Text("Clear",style:
+             TextStyle(color: Colors.black,fontWeight: FontWeight.bold),))
           ],
         ),
         
