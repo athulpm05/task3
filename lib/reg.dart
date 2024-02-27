@@ -39,7 +39,7 @@ class _FffState extends State<Fff> {
                 itemCount: widget.users.length,
                 itemBuilder: (context,index){
                 return ListTile(
-                  title: Container(color:  Colors.black,
+                  title: Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.black),
                     child: Column(
                       children: [
                         Text(widget.users[index]["name"],style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),

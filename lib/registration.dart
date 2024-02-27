@@ -153,7 +153,7 @@ class _RegState extends State<Reg> {
                           width: 200,
                           child: RadioListTile(
                               title: Text("Male"),
-                              value: "male",
+                              value: "Male",
                               groupValue: Gender,
                               onChanged: (value) {
                                 setState(() {
