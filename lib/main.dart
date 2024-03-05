@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/calculator.dart';
+import 'package:flutter_application_3/formkey.dart';
+import 'package:flutter_application_3/login01.dart';
+import 'package:flutter_application_3/loginpage.dart';
+import 'package:flutter_application_3/playstoreog/play.dart';
 import 'package:flutter_application_3/reg.dart';
 import 'package:flutter_application_3/registration.dart';
 
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Reg()
+      home:Ply()
     );
   }
 }

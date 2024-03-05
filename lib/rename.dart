@@ -14,8 +14,13 @@ class _RenameState extends State<Rename> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+                                 // body
       body: Padding(
         padding: const EdgeInsets.only(top: 60,left: 30),
+
+                        
+                        // SizedBox
+                        
         child: SizedBox(
           width: 250,
           height: 50,

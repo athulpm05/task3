@@ -13,8 +13,13 @@ class Soon extends StatefulWidget {
 class _SoonState extends State<Soon> {
   @override
   Widget build(BuildContext context) {
+
+
     return DefaultTabController(
+
+
       length: 2,
+      
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue[100],
